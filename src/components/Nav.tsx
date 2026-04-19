@@ -2,13 +2,12 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { site } from "@/lib/site";
 
 const navItems = [
   { href: "/projects", label: "Work" },
   { href: "/blog", label: "Writing" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "/contact", label: "Contact", highlight: true },
 ];
 
 function isActive(pathname: string, href: string) {
@@ -23,14 +22,14 @@ export default function Nav() {
     <header className="fixed inset-x-0 top-0 z-50">
       <div className="mx-auto mt-4 w-[calc(100%-1.5rem)] max-w-5xl sm:mt-6 sm:w-[calc(100%-2.5rem)]">
         {/* Glass Rail — surface-variant @ 60% + heavy blur */}
-        <nav className="flex items-center justify-between rounded-sharp bg-surface-variant/60 px-5 py-3 backdrop-blur-2xl supports-[backdrop-filter]:bg-surface-variant/40 sm:px-6">
+        <nav className="flex items-center justify-between rounded-2xl bg-surface-variant/40 px-5 py-3 backdrop-blur-2xl supports-[backdrop-filter]:bg-surface-variant/20 sm:px-6">
           <Link
             href="/"
             className="font-serif text-lg font-medium tracking-tight text-on-surface"
             aria-label="Home"
           >
-            {site.name.split(" ")[0]}
-            <span className="text-primary">.</span>
+            {"Home"}
+            <span className="text-primary"></span>
           </Link>
 
           <ul className="flex items-center gap-1 sm:gap-2">
@@ -41,9 +40,11 @@ export default function Nav() {
                   <Link
                     href={item.href}
                     className={`inline-flex items-center gap-2 px-2 py-1 text-sm transition-colors sm:px-3 ${
-                      active
-                        ? "text-on-surface"
-                        : "text-on-surface-variant hover:text-on-surface"
+                      "highlight" in item
+                        ? "text-primary"
+                        : active
+                          ? "text-on-surface"
+                          : "text-on-surface-variant hover:text-on-surface"
                     }`}
                   >
                     {active && (

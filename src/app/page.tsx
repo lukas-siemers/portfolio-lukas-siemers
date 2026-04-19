@@ -3,6 +3,7 @@ import ProjectCard from "@/components/ProjectCard";
 import { getFeaturedProjects } from "@/lib/projects";
 import { getAllPosts } from "@/lib/posts";
 import { site } from "@/lib/site";
+import {images} from "@/lib/images";
 
 export default function HomePage() {
   const featured = getFeaturedProjects();
@@ -14,8 +15,8 @@ export default function HomePage() {
         Hero — Newsreader masthead left-aligned, bio offset right.
         Intentional asymmetry per the design spec.
       */}
-      <section className="grid grid-cols-12 gap-y-10 pt-8 sm:pt-16">
-        <div className="col-span-12 md:col-span-8">
+      <section className="space-y-10 pt-8 sm:pt-16">
+        <div>
           <p className="label-md mb-6">
             {site.role} · {site.location}
           </p>
@@ -25,17 +26,21 @@ export default function HomePage() {
           </h1>
         </div>
 
-        <div className="col-span-12 md:col-span-7 md:col-start-6">
-          <p className="text-body-lg text-on-surface/90">{site.shortBio}</p>
-          <p className="mt-6">
-            <a
-              href={`mailto:${site.email}`}
-              className="gradient-primary shadow-bloom inline-flex items-center gap-2 rounded-sharp px-5 py-2.5 text-sm font-medium text-on-primary transition-transform hover:-translate-y-0.5"
-            >
-              Get in touch
-              <span aria-hidden>→</span>
-            </a>
-          </p>
+        <div className="flex flex-col items-center gap-8 md:flex-row md:items-end">
+          <img src={images.profile.headshot} alt="Headshot of Lukas Siemers" className="h-40 w-40 shrink-0 object-cover sm:h-60 sm:w-60" />
+
+          <div>
+            <p className="text-body-lg text-on-surface/90">{site.shortBio}</p>
+            <p className="mt-6">
+              <a
+                href={`mailto:${site.email}`}
+                className="inline-flex items-center gap-2 rounded-xl bg-surface-container-low px-7 py-3.5 text-base font-medium text-primary transition-all hover:bg-surface-container hover:-translate-y-0.5"
+              >
+                Get in touch
+                <span aria-hidden>→</span>
+              </a>
+            </p>
+          </div>
         </div>
       </section>
 
