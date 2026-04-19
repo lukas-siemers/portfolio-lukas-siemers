@@ -1,5 +1,6 @@
 "use client";
 
+import { site } from "@/lib/site";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -28,7 +29,7 @@ export default function Nav() {
             className="font-serif text-lg font-medium tracking-tight text-on-surface"
             aria-label="Home"
           >
-            {"Home"}
+            {site.name}
             <span className="text-primary"></span>
           </Link>
 
@@ -41,7 +42,7 @@ export default function Nav() {
                     href={item.href}
                     className={`inline-flex items-center gap-2 px-2 py-1 text-sm transition-colors sm:px-3 ${
                       "highlight" in item
-                        ? "text-primary"
+                        ? "font-medium text-primary-container"
                         : active
                           ? "text-on-surface"
                           : "text-on-surface-variant hover:text-on-surface"
