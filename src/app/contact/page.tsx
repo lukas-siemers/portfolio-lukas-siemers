@@ -30,10 +30,10 @@ export default function ContactPage() {
       <section>
         <a
           href={`mailto:${site.email}`}
-          className="gradient-primary shadow-bloom group flex flex-col rounded-sharp py-8 pl-10 pr-6 text-on-primary transition-transform hover:-translate-y-0.5 sm:flex-row sm:items-center sm:justify-between"
+          className="group flex flex-col rounded-xl bg-surface-container-low py-8 pl-10 pr-6 text-primary transition-all hover:bg-surface-container hover:-translate-y-0.5 sm:flex-row sm:items-center sm:justify-between"
         >
           <div>
-            <p className="label-md text-on-primary/70">Email</p>
+            <p className="label-md text-on-surface-variant">Email</p>
             <p className="mt-2 font-serif text-headline-sm sm:text-headline-md">
               {site.email}
             </p>
@@ -53,7 +53,7 @@ export default function ContactPage() {
           href={site.socials.github}
           target="_blank"
           rel="noreferrer"
-          className="ghost-border group flex items-center justify-between rounded-sharp bg-surface-container-lowest py-6 pl-8 pr-6 transition-colors hover:bg-surface-container-low"
+          className="group flex items-center justify-between rounded-xl bg-surface-container-low py-6 pl-8 pr-6 transition-all hover:bg-surface-container hover:-translate-y-0.5"
         >
           <div>
             <p className="label-md">GitHub</p>
@@ -68,7 +68,7 @@ export default function ContactPage() {
           href={site.socials.linkedin}
           target="_blank"
           rel="noreferrer"
-          className="ghost-border group flex items-center justify-between rounded-sharp bg-surface-container-lowest py-6 pl-8 pr-6 transition-colors hover:bg-surface-container-low"
+          className="group flex items-center justify-between rounded-xl bg-surface-container-low py-6 pl-8 pr-6 transition-all hover:bg-surface-container hover:-translate-y-0.5"
         >
           <div>
             <p className="label-md">LinkedIn</p>

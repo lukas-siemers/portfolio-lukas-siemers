@@ -11,19 +11,14 @@ export default function HomePage() {
 
   return (
     <div className="space-y-section">
-      {/*
-        Hero — Newsreader masthead left-aligned, bio offset right.
-        Intentional asymmetry per the design spec.
-      */}
-      <section className="space-y-10 pt-8 sm:pt-16">
+      <section className="space-y-5 pt-8 sm:pt-10">
         <div>
-          <p className="label-md mb-6">
+          <h1 className="font-serif text-display-md text-on-surface sm:text-display-lg text-primary">
+            {site.name}.
+          </h1>
+                    <p className="label-md mb-6">
             {site.role} · {site.location}
           </p>
-          <h1 className="font-serif text-display-md text-on-surface sm:text-display-lg">
-            {site.name}
-            <span className="text-primary">.</span>
-          </h1>
         </div>
 
         <div className="flex flex-col items-center gap-8 md:flex-row md:items-end">
@@ -51,7 +46,7 @@ export default function HomePage() {
           <div className="col-span-6 text-right">
             <Link
               href="/projects"
-              className="text-sm text-on-surface-variant transition-colors hover:text-primary"
+              className="inline-flex items-center gap-2 rounded-xl bg-surface-container-low px-5 py-2.5 text-sm font-medium text-primary transition-all hover:bg-surface-container hover:-translate-y-0.5"
             >
               All work →
             </Link>
@@ -73,7 +68,7 @@ export default function HomePage() {
             <div className="col-span-6 text-right">
               <Link
                 href="/blog"
-                className="text-sm text-on-surface-variant transition-colors hover:text-primary"
+                className="inline-flex items-center gap-2 rounded-xl bg-surface-container-low px-5 py-2.5 text-sm font-medium text-primary transition-all hover:bg-surface-container hover:-translate-y-0.5"
               >
                 All posts →
               </Link>
