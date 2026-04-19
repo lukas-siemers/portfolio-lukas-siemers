@@ -47,6 +47,8 @@ const config: Config = {
       },
       fontSize: {
         // Editorial Avant-Garde scale
+        "display-2xl": ["8rem", { lineHeight: "0.85", letterSpacing: "-0.035em" }],
+        "display-xl": ["5rem", { lineHeight: "0.9", letterSpacing: "-0.03em" }],
         "display-lg": ["3.5rem", { lineHeight: "1.05", letterSpacing: "-0.02em" }],
         "display-md": ["2.75rem", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
         "headline-md": ["1.75rem", { lineHeight: "1.25", letterSpacing: "-0.015em" }],

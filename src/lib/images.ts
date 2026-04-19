@@ -6,6 +6,9 @@ export const images = {
   profile: {
     headshot: "/images/Headshot-cutout.png",
   },
+  logos: {
+    t5: "/images/T5.png",
+  },
   projects: {
     cmms: "/images/projects/cmms.webp",
     gpstie: "/images/projects/gpstie.webp",

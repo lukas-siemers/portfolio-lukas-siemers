@@ -42,6 +42,8 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-screen bg-surface text-on-surface antialiased">
+        {/* Page-wide ambient glow — fixed behind all content. */}
+        <div className="page-glow fixed inset-0 -z-10" aria-hidden />
         <Nav />
         <main className="mx-auto w-full max-w-5xl px-6 pb-24 pt-20 sm:px-10 sm:pt-28">
           {children}

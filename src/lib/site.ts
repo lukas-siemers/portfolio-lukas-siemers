@@ -11,6 +11,10 @@ export const site = {
     github: "https://github.com/lukas-siemers",
     linkedin: "https://www.linkedin.com/in/lukas-siemers-306678201/",
   },
+  t5: {
+    name: "T5",
+    github: "https://github.com/T5-labs",
+  },
 };
 
 export type SiteConfig = typeof site;
