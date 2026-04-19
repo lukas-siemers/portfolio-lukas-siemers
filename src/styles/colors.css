@@ -1,0 +1,36 @@
+/*
+  Color palette — Editorial Avant-Garde / Digital Curator.
+
+  All tokens are expressed as "R G B" triplets (no commas) so Tailwind's
+  `<alpha-value>` syntax works: e.g. `bg-surface/60`.
+
+  To change a color: edit the triplet here. Every page updates automatically.
+  To add a color: add it here, then wire it into tailwind.config.ts `colors`.
+*/
+:root,
+.dark {
+  /* Surfaces — layered like luxury materials */
+  --surface: 19 19 19;                   /* #131313   base */
+  --surface-container-lowest: 11 11 11;  /*           deepest carve */
+  --surface-container-low: 28 27 27;     /* #1c1b1b   subtle grouping */
+  --surface-container: 38 37 37;
+  --surface-container-high: 46 45 45;
+  --surface-container-highest: 53 53 52; /* #353534   high importance */
+  --surface-variant: 40 40 44;           /*           glass base */
+  --surface-tint: 173 198 255;           /*           primary used as tint */
+
+  /* Content — on-surface is never pure white, to prevent haloing */
+  --on-surface: 229 226 225;             /* #e5e2e1 */
+  --on-surface-variant: 157 157 163;     /*           muted body / metadata */
+
+  /* Accent — Electric Blue. Use sparingly. */
+  --primary: 173 198 255;                /* #adc6ff */
+  --primary-container: 75 142 255;       /* #4b8eff   gradient partner */
+  --on-primary: 11 11 11;
+
+  /* Error — text-only, no red boxes */
+  --error: 255 180 171;                  /* #ffb4ab */
+
+  /* Outline — the "Ghost Border". Apply at 15% opacity to be felt, not seen. */
+  --outline-variant: 65 71 85;           /* #414755 */
+}

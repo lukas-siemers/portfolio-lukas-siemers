@@ -1,38 +1,18 @@
+/*
+  Single CSS entry point. Everything styling-related lives in /src/styles.
+  If you want to change:
+    - Colors       → src/styles/colors.css
+    - Fonts        → src/styles/fonts.ts
+    - Utility CSS  → src/styles/theme.css
+    - Type scale,
+      spacing,
+      Tailwind     → tailwind.config.ts
+
+  Note: @import must come before @tailwind directives per CSS spec.
+*/
+@import "../styles/colors.css";
+@import "../styles/theme.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --bg: 255 255 255;
-  --fg: 15 23 42;
-  --muted: 100 116 139;
-  --accent: 14 165 233;
-  --border: 226 232 240;
-}
-
-.dark {
-  --bg: 10 10 15;
-  --fg: 241 245 249;
-  --muted: 148 163 184;
-  --accent: 56 189 248;
-  --border: 30 41 59;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background-color: rgb(var(--bg));
-  color: rgb(var(--fg));
-  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
-  -webkit-font-smoothing: antialiased;
-}
-
-::selection {
-  background-color: rgb(var(--accent) / 0.25);
-}
-
-a {
-  text-underline-offset: 3px;
-}

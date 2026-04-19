@@ -10,48 +10,63 @@ export type Project = {
     writeup?: string;
   };
   year: number;
+  kind: "work" | "personal";
   featured?: boolean;
 };
 
+/*
+  Work projects are described at the same level of detail as the public
+  resume — no customer internals, no code, no screenshots. Safe to publish.
+*/
 export const projects: Project[] = [
   {
-    slug: "sample-project-one",
-    title: "Sample Project One",
-    tagline: "A short, punchy description of what it does.",
+    slug: "cmms-transit",
+    title: "CMMS — Enterprise maintenance platform",
+    tagline:
+      "Full-stack work on the platform that runs Herzog's maintenance operations.",
     description:
-      "Replace this with a real project. A good entry answers: what problem it solves, how you built it, and one thing that was interesting or hard. Two to three sentences is plenty.",
-    stack: ["TypeScript", "Next.js", "Postgres"],
-    links: {
-      github: "https://github.com/your-github-username/sample-project-one",
-      live: "https://example.com",
-    },
-    year: 2026,
-    featured: true,
-  },
-  {
-    slug: "sample-project-two",
-    title: "Sample Project Two",
-    tagline: "Another thing you built.",
-    description:
-      "Keep descriptions tight. If you need more space, link to a dedicated writeup in `links.writeup` or a blog post.",
-    stack: ["Go", "Redis", "Docker"],
-    links: {
-      github: "https://github.com/your-github-username/sample-project-two",
-    },
+      "Built features across an enterprise CMMS used to manage invoices, assets, purchase orders, work orders, schedules, defects, and PowerBI reporting. Led the migration of a legacy Transit application's features and database schemas into the platform. Shipped a Bill of Materials module supporting multi-level parent/child material relationships for the R&D team. Managed concurrent v1.7 / v1.8 development across four environments via CI/CD. When Azure suspended our outbound email mid-cycle, architected a rapid migration to a RabbitMQ message queue to recover thousands of unsent emails.",
+    stack: ["Angular", "TypeScript", "C#", ".NET", "SQL", "Azure", "RabbitMQ"],
+    links: {},
     year: 2025,
+    kind: "work",
     featured: true,
   },
   {
-    slug: "sample-project-three",
-    title: "Sample Project Three",
-    tagline: "Older but still representative.",
+    slug: "gpstie",
+    title: "GPSTIE — Cross-platform tie-dropping app",
+    tagline:
+      "Replaced an obsolete hardware system with a tablet-and-laptop solution for railroad crews.",
     description:
-      "Older projects are fine — the signal is breadth and trajectory. Order matters though: keep your best work at the top.",
-    stack: ["Python", "FastAPI"],
-    links: {
-      github: "https://github.com/your-github-username/sample-project-three",
-    },
-    year: 2024,
+      "Cross-platform desktop app for tie-dropping operations. Two operators can share a job over RF, see each other's drops on a live map, and stay in sync across devices. Built a statistics dashboard and an automatic GPS failover so accuracy doesn't degrade when signal drops mid-run.",
+    stack: [".NET MAUI", "C#", "XAML"],
+    links: {},
+    year: 2025,
+    kind: "work",
+    featured: true,
+  },
+  {
+    slug: "ebus-spreadlogs",
+    title: "EBUS — Spreadlogs feature",
+    tagline:
+      "End-to-end design and build of a feature that eliminated a tool-switching pain point.",
+    description:
+      "Designed and shipped the Spreadlogs feature end-to-end — DB schema, architecture, frontend — so operators no longer had to switch between EBUS and a separate application to upload data. Built as a hybrid WinForms/WPF solution with MVVM to drop a modern XAML frontend into a legacy WinForms host. Tracked down a YAML configuration bug that was caching and overwriting stored settings — the kind of thing that takes hours to find and minutes to fix.",
+    stack: ["C#", "WPF", "WinForms", "XAML", "C++", "SQL"],
+    links: {},
+    year: 2025,
+    kind: "work",
+  },
+  {
+    slug: "ebus-legacy",
+    title: "EBUS — Legacy stabilization",
+    tagline: "Maintenance and debugging on a load-bearing legacy application.",
+    description:
+      "Ongoing work on a WinForms application that's critical to railroad operations. UI fixes, backend bug hunts, and stability improvements. Less glamorous than greenfield, but it's where I learned the system inside out — which made every later project faster.",
+    stack: ["C#", "WinForms", "WPF", "C++"],
+    links: {},
+    year: 2025,
+    kind: "work",
   },
 ];
 
@@ -61,4 +76,12 @@ export function getFeaturedProjects(): Project[] {
 
 export function getProjectBySlug(slug: string): Project | undefined {
   return projects.find((p) => p.slug === slug);
+}
+
+export function getWorkProjects(): Project[] {
+  return projects.filter((p) => p.kind === "work");
+}
+
+export function getPersonalProjects(): Project[] {
+  return projects.filter((p) => p.kind === "personal");
 }

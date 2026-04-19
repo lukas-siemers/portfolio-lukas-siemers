@@ -1,15 +1,15 @@
 export const site = {
   name: "Lukas Siemers",
-  role: "Software Engineer",
+  role: "Full Stack Software Engineer",
+  tagline: "Full-stack engineer. Railroads.",
   shortBio:
-    "Software engineer who enjoys building clean, fast products. I care about developer experience, good APIs, and the details that make software feel nice to use.",
+    "Full-stack engineer at Herzog Railroad Services in Saint Joseph, MO. I build the software that runs railroad operations and maintenance — CMMS platforms, field apps for crews, and the systems behind both. Trained as a diesel mechanic before I was a programmer. The overlap is larger than you'd expect.",
   email: "lukas.siemers123@gmail.com",
-  location: "Earth",
+  location: "Saint Joseph, MO",
   url: "https://example.com", // replace with your real domain once set
   socials: {
-    github: "https://github.com/your-github-username",
-    linkedin: "https://linkedin.com/in/your-linkedin",
-    x: "https://x.com/your-handle",
+    github: "https://github.com/lukas-siemers",
+    linkedin: "https://www.linkedin.com/in/lukas-siemers-306678201/",
   },
 };
 

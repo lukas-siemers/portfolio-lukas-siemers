@@ -1,0 +1,62 @@
+/*
+  Base styles + reusable utility classes that aren't well-expressed as
+  single Tailwind utilities. Edit here; don't duplicate across pages.
+*/
+
+/* ---------- Base ---------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(var(--surface));
+  color: rgb(var(--on-surface));
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+::selection {
+  background-color: rgb(var(--primary) / 0.25);
+  color: rgb(var(--on-surface));
+}
+
+/* Focus ring — required because the design forbids borders.
+   Every interactive element needs a visible focus state for a11y. */
+:focus-visible {
+  outline: 2px solid rgb(var(--primary));
+  outline-offset: 3px;
+}
+
+/* ---------- Reusable utilities ---------- */
+
+/* Spec-sheet label — uppercase, tight, technical */
+.label-md {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgb(var(--on-surface-variant));
+}
+
+/* Signature gradient — Editorial Avant-Garde primary CTA.
+   135° primary → primary-container. Use on exactly ONE element per page. */
+.gradient-primary {
+  background-image: linear-gradient(
+    135deg,
+    rgb(var(--primary)) 0%,
+    rgb(var(--primary-container)) 100%
+  );
+}
+
+/* Ambient bloom — for floating objects. Never pure black,
+   always a deep bloom of the background. */
+.shadow-bloom {
+  box-shadow: 0 20px 40px rgb(0 0 0 / 0.4);
+}
+
+/* Ghost Border — "felt, not seen". For rare cases where a container
+   truly needs a boundary cue but can't rely on surface shifts. */
+.ghost-border {
+  box-shadow: inset 0 0 0 1px rgb(var(--outline-variant) / 0.15);
+}

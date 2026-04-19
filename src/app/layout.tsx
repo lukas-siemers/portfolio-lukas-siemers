@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { fontVariables } from "@/styles/fonts";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { site } from "@/lib/site";
@@ -35,10 +36,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
-      <body className="min-h-screen antialiased">
+    <html
+      lang="en"
+      className={`${fontVariables} dark`}
+      suppressHydrationWarning
+    >
+      <body className="min-h-screen bg-surface text-on-surface antialiased">
         <Nav />
-        <main className="mx-auto max-w-3xl px-6 py-12">{children}</main>
+        <main className="mx-auto w-full max-w-5xl px-6 pb-24 pt-20 sm:px-10 sm:pt-28">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

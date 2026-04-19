@@ -29,21 +29,41 @@ export default async function PostPage(
   if (!post) notFound();
 
   return (
-    <article>
-      <Link
-        href="/blog"
-        className="mb-8 inline-flex items-center gap-1.5 text-sm text-muted transition-colors hover:text-fg"
-      >
-        <ArrowLeft className="h-3.5 w-3.5" /> All posts
-      </Link>
+    <article className="space-y-section">
+      {/* Back link */}
+      <div className="pt-4">
+        <Link
+          href="/blog"
+          className="inline-flex items-center gap-1.5 text-sm text-on-surface-variant transition-colors hover:text-primary"
+        >
+          <ArrowLeft className="h-3.5 w-3.5" /> All writing
+        </Link>
+      </div>
 
-      <header className="mb-8">
-        <h1 className="text-2xl font-semibold tracking-tight">{post.title}</h1>
-        <p className="mt-2 font-mono text-sm text-muted">{post.date}</p>
+      {/* Masthead */}
+      <header className="grid grid-cols-12 gap-y-6 pt-4">
+        <div className="col-span-12 md:col-span-10">
+          <p className="label-md mb-6">{post.date}</p>
+          <h1 className="font-serif text-display-md text-on-surface sm:text-display-lg">
+            {post.title}
+          </h1>
+        </div>
+        {post.description && (
+          <div className="col-span-12 md:col-span-7 md:col-start-6">
+            <p className="text-body-lg text-on-surface-variant">
+              {post.description}
+            </p>
+          </div>
+        )}
       </header>
 
-      <div className="prose prose-invert max-w-none prose-headings:font-semibold prose-a:text-accent prose-code:rounded prose-code:bg-border/40 prose-code:px-1 prose-code:py-0.5 prose-code:font-mono prose-code:text-sm prose-code:before:content-none prose-code:after:content-none">
-        <MDXRemote source={post.content} />
+      {/* Body — narrow column, offset right, editorial rhythm */}
+      <div className="grid grid-cols-12">
+        <div className="col-span-12 md:col-span-8 md:col-start-3">
+          <div className="prose prose-invert max-w-none text-body-lg">
+            <MDXRemote source={post.content} />
+          </div>
+        </div>
       </div>
     </article>
   );

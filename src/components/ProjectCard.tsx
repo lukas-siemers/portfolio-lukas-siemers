@@ -1,54 +1,76 @@
 import type { Project } from "@/lib/projects";
 import { ExternalLink, Github } from "lucide-react";
 
+/*
+  No borders. Surface-container-low panel on the page surface to create
+  a "carved-out" feel. Asymmetric padding (pl-10 pr-6) for editorial rhythm.
+*/
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="group rounded-lg border border-border p-5 transition-colors hover:border-fg/20">
-      <div className="flex items-start justify-between gap-4">
-        <div>
-          <h3 className="font-medium text-fg">{project.title}</h3>
-          <p className="mt-1 text-sm text-muted">{project.tagline}</p>
+    <article className="group rounded-sharp bg-surface-container-low py-7 pl-6 pr-5 transition-colors hover:bg-surface-container sm:py-8 sm:pl-10 sm:pr-6">
+      <div className="grid grid-cols-12 gap-4">
+        <div className="col-span-12 sm:col-span-9">
+          <h3 className="font-serif text-headline-sm text-on-surface sm:text-headline-md">
+            {project.title}
+          </h3>
+          <p className="mt-2 text-body-md text-on-surface-variant">
+            {project.tagline}
+          </p>
         </div>
-        <span className="font-mono text-xs text-muted">{project.year}</span>
+        <div className="col-span-12 sm:col-span-3 sm:text-right">
+          <p className="label-md">{project.year}</p>
+        </div>
       </div>
 
-      <p className="mt-3 text-sm leading-relaxed text-muted">
+      <p className="mt-6 max-w-2xl text-body-md leading-relaxed text-on-surface/85">
         {project.description}
       </p>
 
-      <div className="mt-4 flex flex-wrap items-center gap-2">
+      <div className="mt-6 flex flex-wrap items-center gap-2">
         {project.stack.map((tech) => (
           <span
             key={tech}
-            className="rounded border border-border px-2 py-0.5 font-mono text-xs text-muted"
+            className="rounded-sharp bg-surface-container px-2.5 py-1 font-mono text-xs text-on-surface-variant"
           >
             {tech}
           </span>
         ))}
       </div>
 
-      <div className="mt-4 flex items-center gap-4 text-sm">
-        {project.links.github && (
-          <a
-            href={project.links.github}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-1.5 text-muted transition-colors hover:text-fg"
-          >
-            <Github className="h-3.5 w-3.5" /> Code
-          </a>
-        )}
-        {project.links.live && (
-          <a
-            href={project.links.live}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-1.5 text-muted transition-colors hover:text-fg"
-          >
-            <ExternalLink className="h-3.5 w-3.5" /> Live
-          </a>
-        )}
-      </div>
+      {(project.links.github || project.links.live || project.links.writeup) && (
+        <div className="mt-6 flex flex-wrap items-center gap-5 text-sm">
+          {project.links.github && (
+            <a
+              href={project.links.github}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 text-on-surface-variant transition-colors hover:text-primary"
+            >
+              <Github className="h-3.5 w-3.5" /> Code
+            </a>
+          )}
+          {project.links.live && (
+            <a
+              href={project.links.live}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 text-on-surface-variant transition-colors hover:text-primary"
+            >
+              <ExternalLink className="h-3.5 w-3.5" /> Live
+            </a>
+          )}
+          {project.links.writeup && (
+            <a
+              href={project.links.writeup}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 text-on-surface-variant transition-colors hover:text-primary"
+            >
+              Write-up
+            </a>
+          )}
+        </div>
+      )}
     </article>
   );
 }
