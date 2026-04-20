@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { fontVariables } from "@/styles/fonts";
+import Aurora from "@/components/Aurora";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { site } from "@/lib/site";
@@ -42,8 +43,13 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-screen bg-surface text-on-surface antialiased">
-        {/* Page-wide ambient glow — fixed behind all content. */}
-        <div className="page-glow fixed inset-0 -z-10" aria-hidden />
+        {/* Ambient aurora — fixed behind all content, muted and slow. */}
+        <div
+          className="pointer-events-none fixed inset-0 -z-10 opacity-50"
+          aria-hidden
+        >
+          <Aurora />
+        </div>
         <Nav />
         <main className="mx-auto w-full max-w-5xl px-6 pb-24 pt-20 sm:px-10 sm:pt-28">
           {children}
