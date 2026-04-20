@@ -3,7 +3,7 @@ export const site = {
   role: "Full Stack Software Engineer",
   tagline: "Full-stack engineer. Railroads.",
   shortBio:
-  "Full-stack software engineer at Herzog Railroad Services. I started out on ballast-train integrations and now work across the enterprise systems that keep rail operations running. On the side I build T5 — a developer-tools organization where we ship our own projects. Outside work: hiking, climbing, tinkering. Most of my learning goes to AI right now — the biggest shift to the craft I've seen, and one I'd rather lead than chase.",  
+  "Full-stack software engineer at Herzog Railroad Services. I started out on ballast-train integrations and now work across the enterprise systems that keep rail operations running. On the side I build T5, a developer-tools organization where we ship our own projects. Outside work: hiking, climbing, tinkering. Most of my learning goes to AI right now. It's the biggest shift to the craft I've seen, and one I'd rather lead than chase.",
   email: "lukas.siemers123@gmail.com",
   location: "Saint Joseph, MO",
   url: "https://example.com", // replace with your real domain once set

@@ -18,7 +18,14 @@ export default function ProjectCard({ project }: { project: Project }) {
           </p>
         </div>
         <div className="col-span-12 sm:col-span-3 sm:text-right">
-          <p className="label-md">{project.year}</p>
+          {project.status ? (
+            <>
+              <p className="label-md text-primary">{project.status}</p>
+              <p className="label-sm mt-1">{project.year}</p>
+            </>
+          ) : (
+            <p className="label-md">{project.year}</p>
+          )}
         </div>
       </div>
 

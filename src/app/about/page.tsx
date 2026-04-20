@@ -26,7 +26,7 @@ export default function AboutPage() {
             <p>
               I&apos;m a full-stack engineer at Herzog Railroad Services in
               Saint Joseph, Missouri. I build software that runs railroad
-              operations — CMMS platforms for fleets and facilities, the tools
+              operations: CMMS platforms for fleets and facilities, the tools
               crews use in the field, and the integrations that hold those
               systems together.
             </p>
@@ -35,7 +35,7 @@ export default function AboutPage() {
               associate&apos;s in Diesel Engine Technology from Bishop State
               Community College, then went back to school for a Computer
               Science degree at Missouri Western State, which I finished in
-              December 2024. That background isn&apos;t a detour — it&apos;s
+              December 2024. That background isn&apos;t a detour. It&apos;s
               why I&apos;m good at this kind of work. Industrial software is
               full of edge cases that only make sense if you&apos;ve stood
               next to the machine.
@@ -70,7 +70,7 @@ export default function AboutPage() {
               Herzog.
             </li>
             <li>Sharpening my eye for system architecture and database design.</li>
-            <li>Trying to write more — hence this site.</li>
+            <li>Trying to write more. Hence this site.</li>
           </ul>
         </div>
       </section>

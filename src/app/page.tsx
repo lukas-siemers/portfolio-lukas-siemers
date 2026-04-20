@@ -84,7 +84,7 @@ export default function HomePage() {
                 Data &amp; systems.
               </h3>
               <p className="mt-6 max-w-md text-body-md leading-relaxed text-on-surface-variant">
-                Schemas, migrations, integrations. The long-lived layer —
+                Schemas, migrations, integrations. The long-lived layer:
                 inventory models, sync between CMMS and field, the data that
                 outlasts whatever UI sits on top of it.
               </p>
@@ -114,7 +114,7 @@ export default function HomePage() {
               </h3>
               <p className="mt-6 max-w-sm text-body-md leading-relaxed text-on-surface-variant">
                 Web, desktop, and hardware-adjacent apps. Angular in the
-                office, MAUI and WPF trackside — whichever environment the
+                office, MAUI and WPF trackside, whichever environment the
                 work actually lives in.
               </p>
               <div className="mt-8 flex flex-wrap gap-2">
@@ -140,7 +140,7 @@ export default function HomePage() {
                 </h3>
                 <p className="mt-6 max-w-xl text-body-md leading-relaxed text-on-surface-variant">
                   On the side I build{" "}
-                  <span className="text-on-surface">T5</span> — a
+                  <span className="text-on-surface">T5</span>, a
                   developer-tools organization where we create different
                   projects. It&apos;s also the bench where I experiment with
                   AI as a craft shift: what sharpens us, what doesn&apos;t,
@@ -170,7 +170,7 @@ export default function HomePage() {
       {/* ---------- FEATURED WORK ---------- */}
       <section>
         <div className="mb-10 flex items-end justify-between gap-6">
-          <p className="label-md">Featured work</p>
+          <p className="label-md">Featured projects</p>
           <Link
             href="/projects"
             className="rule-hairline text-xs font-medium uppercase tracking-[0.2em] text-primary transition-opacity hover:opacity-80"

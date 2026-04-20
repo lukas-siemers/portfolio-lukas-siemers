@@ -6,8 +6,8 @@ import {
 } from "@/lib/projects";
 
 export const metadata: Metadata = {
-  title: "Work",
-  description: "Selected engineering work and side projects.",
+  title: "Projects",
+  description: "Selected engineering work and private projects.",
 };
 
 export default function ProjectsPage() {
@@ -16,58 +16,67 @@ export default function ProjectsPage() {
 
   return (
     <div className="space-y-section">
-      {/* Masthead */}
-      <section className="grid grid-cols-12 gap-y-10 pt-8 sm:pt-16">
-        <div className="col-span-12 md:col-span-9">
-          <p className="label-md mb-6">Work</p>
-          <h1 className="font-serif text-display-md text-on-surface sm:text-display-lg">
-            Selected engagements
-            <span className="text-primary">.</span>
-          </h1>
-        </div>
-        <div className="col-span-12 md:col-span-7 md:col-start-6">
-          <p className="text-body-lg text-on-surface-variant">
-            Code is proprietary, so descriptions cover what I built and the
-            technical choices — not internals.
-          </p>
-        </div>
+      {/* ---------- MASTHEAD ---------- */}
+      <section className="pt-10 sm:pt-16">
+        <h1 className="font-serif italic tracking-tighter text-display-lg text-on-surface sm:text-display-xl">
+          Projects
+          <span className="text-primary-container">.</span>
+        </h1>
       </section>
 
-      {/* Professional work */}
-      {work.length > 0 && (
-        <section>
-          <div className="mb-8">
-            <p className="label-md">Professional · Herzog Railroad Services</p>
+      {/* ---------- 01 / WORK ---------- */}
+      <section>
+        <div className="mb-10 grid grid-cols-12 items-end gap-4">
+          <div className="col-span-12 md:col-span-9">
+            <p className="label-md text-primary">01 / Work</p>
+            <h2 className="mt-3 font-serif italic tracking-tight text-headline-md text-on-surface sm:text-display-md">
+              At Herzog.
+            </h2>
           </div>
+          <p className="label-sm col-span-12 md:col-span-3 md:text-right">
+            Railroad Services
+          </p>
+        </div>
+
+        {work.length > 0 ? (
           <div className="space-y-6">
             {work.map((p) => (
               <ProjectCard key={p.slug} project={p} />
             ))}
           </div>
-        </section>
-      )}
+        ) : (
+          <p className="text-body-md text-on-surface-variant">
+            No entries yet.
+          </p>
+        )}
+      </section>
 
-      {/* Personal projects */}
-      {personal.length > 0 ? (
-        <section>
-          <div className="mb-8">
-            <p className="label-md">Personal projects</p>
+      {/* ---------- 02 / PRIVATE ---------- */}
+      <section>
+        <div className="mb-10 grid grid-cols-12 items-end gap-4">
+          <div className="col-span-12 md:col-span-9">
+            <p className="label-md text-primary">02 / Private</p>
+            <h2 className="mt-3 font-serif italic tracking-tight text-headline-md text-on-surface sm:text-display-md">
+              On the side.
+            </h2>
           </div>
+          <p className="label-sm col-span-12 md:col-span-3 md:text-right">
+            Nights &amp; weekends
+          </p>
+        </div>
+
+        {personal.length > 0 ? (
           <div className="space-y-6">
             {personal.map((p) => (
               <ProjectCard key={p.slug} project={p} />
             ))}
           </div>
-        </section>
-      ) : (
-        <section className="grid grid-cols-12 gap-y-8">
-          <div className="col-span-12 md:col-span-3">
-            <p className="label-md">Personal projects</p>
-          </div>
-          <div className="col-span-12 md:col-span-8 md:col-start-5">
-            <p className="text-body-lg text-on-surface-variant">
-              Side projects coming soon. In the meantime, this site itself
-              is the most current sample of how I write code —{" "}
+        ) : (
+          <div className="rounded-sharp bg-surface-container-low p-8 sm:p-10">
+            <p className="max-w-xl text-body-md leading-relaxed text-on-surface-variant">
+              T5 and other private work are taking shape. In the meantime,
+              this site itself is the most current sample of how I write
+              code:{" "}
               <a
                 href="https://github.com/lukas-siemers/lukas-portfolio"
                 className="text-on-surface underline-offset-4 transition-colors hover:text-primary"
@@ -77,8 +86,8 @@ export default function ProjectsPage() {
               .
             </p>
           </div>
-        </section>
-      )}
+        )}
+      </section>
     </div>
   );
 }
