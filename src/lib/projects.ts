@@ -28,7 +28,7 @@ export const projects: Project[] = [
       "Built features across an enterprise CMMS used to manage invoices, assets, purchase orders, work orders, schedules, defects, and PowerBI reporting. Led the migration of a legacy Transit application's features and database schemas into the platform. Shipped a Bill of Materials module supporting multi-level parent/child material relationships for the R&D team. Managed concurrent v1.7 / v1.8 development across four environments via CI/CD. When Azure suspended our outbound email mid-cycle, architected a rapid migration to a RabbitMQ message queue to recover thousands of unsent emails.",
     stack: ["Angular", "TypeScript", "C#", ".NET", "SQL", "Azure", "RabbitMQ"],
     links: {},
-    year: 2025,
+    year: 2026,
     kind: "work",
     featured: true,
   },

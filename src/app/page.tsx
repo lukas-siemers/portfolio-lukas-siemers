@@ -1,14 +1,12 @@
 import Link from "next/link";
-import { Database, Wrench } from "lucide-react";
+import { Database, Monitor } from "lucide-react";
 import ProjectCard from "@/components/ProjectCard";
 import { getFeaturedProjects } from "@/lib/projects";
-import { getAllPosts } from "@/lib/posts";
 import { site } from "@/lib/site";
 import { images } from "@/lib/images";
 
 export default function HomePage() {
   const featured = getFeaturedProjects();
-  const recentPosts = getAllPosts().slice(0, 3);
 
   return (
     <div className="space-y-section">
@@ -27,17 +25,6 @@ export default function HomePage() {
               Siemers.
             </span>
           </h1>
-
-          <aside className="col-span-12 md:col-span-4 md:pb-4">
-            <blockquote className="font-serif italic text-on-surface text-body-lg leading-snug sm:text-headline-sm">
-              &ldquo;Make everything{" "}
-              <span className="text-primary-container">
-                as simple as possible
-              </span>
-              , but not simpler.&rdquo;
-            </blockquote>
-            <p className="label-sm mt-4">— Albert Einstein</p>
-          </aside>
         </div>
 
         {/* Headshot + bio/CTA row, sits beneath the hero headline. */}
@@ -62,6 +49,20 @@ export default function HomePage() {
             </p>
           </div>
         </div>
+
+<div className="mt-24 flex justify-center">
+    <aside className="max-w-xl text-center">
+            <blockquote className="font-serif italic text-on-surface text-body-lg leading-snug sm:text-headline-sm">
+              &ldquo;Make everything{" "}
+              <span className="text-primary-container">
+                as simple as possible
+              </span>
+              , but not simpler.&rdquo;
+            </blockquote>
+            <p className="label-sm mt-4">Albert Einstein</p>
+          </aside>
+</div>
+
       </section>
 
       {/* ---------- DISCIPLINES BENTO ---------- */}
@@ -71,24 +72,24 @@ export default function HomePage() {
         </div>
 
         <div className="grid grid-cols-1 gap-5 md:grid-cols-12">
-          {/* 01 — Industrial software (lead card, 7 cols) */}
+          {/* 01 — Data & systems (lead card, 7 cols) */}
           <article className="group relative col-span-1 overflow-hidden rounded-sharp bg-surface-container-high p-10 transition-colors hover:bg-surface-container-highest md:col-span-7">
             <Database
               className="absolute -right-6 -top-4 h-48 w-48 text-primary/5"
               aria-hidden
             />
             <div className="relative z-10">
-              <p className="label-md text-primary">01 / Enterprise</p>
+              <p className="label-md text-primary">01 / Data</p>
               <h3 className="mt-4 font-serif italic text-on-surface text-headline-md sm:text-display-md">
-                Industrial software.
+                Data &amp; systems.
               </h3>
               <p className="mt-6 max-w-md text-body-md leading-relaxed text-on-surface-variant">
-                CMMS platforms, inventory systems, and the behind-the-scenes
-                software that keeps railroad operations running. Long-lived
-                systems, real-world consequences.
+                Schemas, migrations, integrations. The long-lived layer —
+                inventory models, sync between CMMS and field, the data that
+                outlasts whatever UI sits on top of it.
               </p>
               <div className="mt-8 flex flex-wrap gap-2">
-                {[".NET", "TypeScript", "Angular", "SQL"].map((t) => (
+                {["SQL", ".NET", "TypeScript", "Integrations"].map((t) => (
                   <span
                     key={t}
                     className="rounded-sharp bg-surface-container px-2.5 py-1 font-mono text-xs text-on-surface-variant"
@@ -100,23 +101,24 @@ export default function HomePage() {
             </div>
           </article>
 
-          {/* 02 — Field systems (5 cols) */}
+          {/* 02 — Interfaces (5 cols) */}
           <article className="group relative col-span-1 overflow-hidden rounded-sharp bg-surface-container-high p-10 transition-colors hover:bg-surface-container-highest md:col-span-5">
-            <Wrench
+            <Monitor
               className="absolute -right-4 -top-4 h-40 w-40 text-primary/5"
               aria-hidden
             />
             <div className="relative z-10">
-              <p className="label-md text-primary">02 / Field</p>
+              <p className="label-md text-primary">02 / Interfaces</p>
               <h3 className="mt-4 font-serif italic text-on-surface text-headline-md">
-                Field systems.
+                Interfaces.
               </h3>
               <p className="mt-6 max-w-sm text-body-md leading-relaxed text-on-surface-variant">
-                Apps crews use trackside. MAUI, WPF, WinForms —
-                hardware-adjacent software that has to hold up in the field.
+                Web, desktop, and hardware-adjacent apps. Angular in the
+                office, MAUI and WPF trackside — whichever environment the
+                work actually lives in.
               </p>
               <div className="mt-8 flex flex-wrap gap-2">
-                {[".NET MAUI", "WPF", "C#"].map((t) => (
+                {["Angular", ".NET MAUI", "WPF", "TypeScript"].map((t) => (
                   <span
                     key={t}
                     className="rounded-sharp bg-surface-container px-2.5 py-1 font-mono text-xs text-on-surface-variant"
@@ -128,20 +130,21 @@ export default function HomePage() {
             </div>
           </article>
 
-          {/* 03 — Developer tools (full width, icon accent on right) */}
+          {/* 03 — Tooling & AI (full width, T5 logo on right) */}
           <article className="group relative col-span-1 overflow-hidden rounded-sharp bg-surface-container p-10 transition-colors hover:bg-surface-container-high md:col-span-12">
             <div className="flex flex-col gap-10 md:flex-row md:items-center md:gap-16">
               <div className="flex-1">
-                <p className="label-md text-primary">03 / Side</p>
+                <p className="label-md text-primary">03 / Tooling</p>
                 <h3 className="mt-4 font-serif italic text-on-surface text-headline-md sm:text-display-md">
-                  Developer tools.
+                  Tooling &amp; AI.
                 </h3>
                 <p className="mt-6 max-w-xl text-body-md leading-relaxed text-on-surface-variant">
-                  On the side, I build{" "}
-                  <span className="text-on-surface">T5</span> — developer tools
-                  for engineers. Engineer, founder, designer, and everything
-                  between. It&apos;s where I experiment with how AI is pushing
-                  the craft.
+                  On the side I build{" "}
+                  <span className="text-on-surface">T5</span> — a
+                  developer-tools organization where we create different
+                  projects. It&apos;s also the bench where I experiment with
+                  AI as a craft shift: what sharpens us, what doesn&apos;t,
+                  what deserves to be kept.
                 </p>
                 <a
                   href={site.t5.github}
@@ -182,43 +185,6 @@ export default function HomePage() {
           ))}
         </div>
       </section>
-
-      {/* ---------- RECENT WRITING ---------- */}
-      {recentPosts.length > 0 && (
-        <section>
-          <div className="mb-10 flex items-end justify-between gap-6">
-            <p className="label-md">Recent writing</p>
-            <Link
-              href="/blog"
-              className="rule-hairline text-xs font-medium uppercase tracking-[0.2em] text-primary transition-opacity hover:opacity-80"
-            >
-              All posts
-            </Link>
-          </div>
-
-          <ul className="space-y-8">
-            {recentPosts.map((post) => (
-              <li key={post.slug}>
-                <Link href={`/blog/${post.slug}`} className="group block">
-                  <div className="grid grid-cols-12 items-baseline gap-4">
-                    <h3 className="col-span-9 font-serif italic text-headline-sm text-on-surface transition-colors group-hover:text-primary sm:text-headline-md">
-                      {post.title}
-                    </h3>
-                    <p className="label-md col-span-3 text-right">
-                      {post.date}
-                    </p>
-                  </div>
-                  {post.description && (
-                    <p className="mt-2 max-w-xl text-body-md text-on-surface-variant">
-                      {post.description}
-                    </p>
-                  )}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
     </div>
   );
 }

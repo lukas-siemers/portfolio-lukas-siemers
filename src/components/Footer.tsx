@@ -1,64 +1,43 @@
-import Link from "next/link";
+import { Mail, Github, Linkedin } from "lucide-react";
 import { site } from "@/lib/site";
 
 export default function Footer() {
+  const year = new Date().getFullYear();
+
   return (
-    <footer className="mt-24 bg-surface-container-lowest">
-      <div className="mx-auto max-w-5xl px-6 py-16 sm:px-10">
-        <div className="grid grid-cols-1 gap-12 sm:grid-cols-3">
-          <div className="sm:col-span-2">
-            <p className="font-serif text-headline-sm text-on-surface">
-              {site.name}
-            </p>
-            <p className="mt-2 max-w-sm text-body-md text-on-surface-variant">
-              {site.role} · {site.location}
-            </p>
-          </div>
-
-          <nav aria-label="Elsewhere" className="sm:justify-self-end">
-            <p className="label-md mb-4">Elsewhere</p>
-            <ul className="space-y-2 text-body-md">
-              <li>
-                <a
-                  href={`mailto:${site.email}`}
-                  className="text-on-surface transition-colors hover:text-primary"
-                >
-                  Email
-                </a>
-              </li>
-              <li>
-                <a
-                  href={site.socials.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-on-surface transition-colors hover:text-primary"
-                >
-                  GitHub
-                </a>
-              </li>
-              <li>
-                <a
-                  href={site.socials.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-on-surface transition-colors hover:text-primary"
-                >
-                  LinkedIn
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-
-        <div className="mt-16 flex items-center justify-between">
-          <p className="label-md">© {new Date().getFullYear()}</p>
-          <Link
-            href="/"
-            className="label-md transition-colors hover:text-on-surface"
+    <footer className="mt-32">
+      <div className="mx-auto flex max-w-5xl flex-col items-center gap-6 px-6 pb-10 pt-16 sm:px-10">
+        {/* Social icons */}
+        <div className="flex items-center gap-10">
+          <a
+            href={`mailto:${site.email}`}
+            aria-label="Email Lukas"
+            className="flex h-11 w-11 items-center justify-center rounded-full bg-surface-container-high text-on-surface-variant transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary-container hover:text-on-primary-container"
           >
-            Top ↑
-          </Link>
+            <Mail className="h-5 w-5" />
+          </a>
+          <a
+            href={site.socials.github}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="GitHub"
+            className="flex h-11 w-11 items-center justify-center rounded-full bg-surface-container-high text-on-surface-variant transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary-container hover:text-on-primary-container"
+          >
+            <Github className="h-5 w-5" />
+          </a>
+          <a
+            href={site.socials.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn"
+            className="flex h-11 w-11 items-center justify-center rounded-full bg-surface-container-high text-on-surface-variant transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary-container hover:text-on-primary-container"
+          >
+            <Linkedin className="h-5 w-5" />
+          </a>
         </div>
+
+        {/* Year */}
+        <p className="label-sm">© {year}</p>
       </div>
     </footer>
   );
