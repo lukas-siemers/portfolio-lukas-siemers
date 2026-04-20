@@ -18,7 +18,7 @@ export default function ProjectsPage() {
     <div className="space-y-section">
       {/* ---------- MASTHEAD ---------- */}
       <section className="pt-10 sm:pt-16">
-        <h1 className="font-serif italic tracking-tighter text-display-lg text-on-surface sm:text-display-xl">
+        <h1 className="font-serif italic tracking-tighter text-on-surface text-display-lg sm:text-display-xl md:text-display-2xl">
           Projects
           <span className="text-primary-container">.</span>
         </h1>
@@ -29,7 +29,7 @@ export default function ProjectsPage() {
         <div className="mb-10 grid grid-cols-12 items-end gap-4">
           <div className="col-span-12 md:col-span-9">
             <p className="label-md text-primary">01 / Work</p>
-            <h2 className="mt-3 font-serif italic tracking-tight text-headline-md text-on-surface sm:text-display-md">
+            <h2 className="mt-3 font-serif italic tracking-tight text-display-md text-on-surface sm:text-display-lg md:text-display-xl">
               At Herzog.
             </h2>
           </div>
@@ -56,7 +56,7 @@ export default function ProjectsPage() {
         <div className="mb-10 grid grid-cols-12 items-end gap-4">
           <div className="col-span-12 md:col-span-9">
             <p className="label-md text-primary">02 / Private</p>
-            <h2 className="mt-3 font-serif italic tracking-tight text-headline-md text-on-surface sm:text-display-md">
+            <h2 className="mt-3 font-serif italic tracking-tight text-display-md text-on-surface sm:text-display-lg md:text-display-xl">
               On the side.
             </h2>
           </div>

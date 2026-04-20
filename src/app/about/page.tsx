@@ -9,20 +9,22 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="space-y-section">
-      {/* Editorial masthead — statement as headline, "About" as small label above */}
-      <section className="grid grid-cols-12 gap-y-10 pt-8 sm:pt-16">
-        <div className="col-span-12 md:col-span-10">
-          <p className="label-md mb-6">About</p>
-          <h1 className="font-serif text-display-md text-on-surface sm:text-display-lg">
-            Building software for the physical world.
-          </h1>
-        </div>
+      {/* ---------- MASTHEAD ---------- */}
+      <section className="pt-10 sm:pt-16">
+        <h1 className="font-serif italic tracking-tighter text-on-surface text-display-lg sm:text-display-xl md:text-display-2xl">
+          Building software
+          <br />
+          <span className="ml-10 sm:ml-20 md:ml-32">
+            for the physical world
+            <span className="text-primary-container">.</span>
+          </span>
+        </h1>
       </section>
 
-      {/* Body — offset right, narrow column, Inter body with 1.6 line-height */}
+      {/* ---------- BODY ---------- */}
       <section className="grid grid-cols-12 gap-y-10">
-        <div className="col-span-12 md:col-span-7 md:col-start-6">
-          <div className="space-y-6 text-body-lg text-on-surface/90">
+        <div className="col-span-12">
+          <div className="max-w-4xl space-y-6 text-body-lg text-on-surface/90">
             <p>
               I&apos;m a full-stack engineer at Herzog Railroad Services in
               Saint Joseph, Missouri. I build software that runs railroad
@@ -31,23 +33,12 @@ export default function AboutPage() {
               systems together.
             </p>
             <p>
-              Before I was an engineer, I was a diesel mechanic. I have an
-              associate&apos;s in Diesel Engine Technology from Bishop State
-              Community College, then went back to school for a Computer
-              Science degree at Missouri Western State, which I finished in
-              December 2024. That background isn&apos;t a detour. It&apos;s
-              why I&apos;m good at this kind of work. Industrial software is
-              full of edge cases that only make sense if you&apos;ve stood
-              next to the machine.
-            </p>
-            <p>
-              Day to day I work across .NET, C#, MAUI, WPF, WinForms,
-              TypeScript, Angular, and SQL. I like the parts most people
-              don&apos;t: migrating legacy systems without breaking them,
-              tracking down production incidents, designing schemas that
-              won&apos;t paint you into a corner two years from now. I&apos;m
-              less interested in trends and more interested in shipping things
-              that work.
+              I studied engines before I studied software. Associate&apos;s in
+              Diesel Engine Technology from Bishop State Community College,
+              then a CS degree from Missouri Western State in December 2024.
+              The two degrees sit closer together than they look. Industrial
+              software is mostly edge cases, and edge cases make more sense
+              when you&apos;ve pulled the hardware apart.
             </p>
             <p>
               I grew up speaking German, learned English well enough to work
@@ -69,7 +60,12 @@ export default function AboutPage() {
               Building enterprise CMMS and railroad operations software at
               Herzog.
             </li>
-            <li>Sharpening my eye for system architecture and database design.</li>
+            <li>
+              Shipping side projects under T5 on nights and weekends.
+            </li>
+            <li>
+              Sharpening my eye for system architecture and database design.
+            </li>
             <li>Trying to write more. Hence this site.</li>
           </ul>
         </div>
