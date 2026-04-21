@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import BlurText from "@/components/BlurText";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -12,103 +13,101 @@ export default function AboutPage() {
       {/* ---------- MASTHEAD ---------- */}
       <section className="pt-10 sm:pt-16">
         <h1 className="font-serif italic tracking-tighter text-on-surface text-display-lg sm:text-display-xl md:text-display-2xl">
-          Building software
+          <BlurText text="A few things" as="span" stagger={40} duration={0.8} />
           <br />
           <span className="ml-10 sm:ml-20 md:ml-32">
-            for the physical world
-            <span className="text-primary-container">.</span>
+            <BlurText
+              text="about me"
+              as="span"
+              stagger={60}
+              startDelay={0.55}
+              duration={0.9}
+            />
+            <BlurText
+              text="."
+              as="span"
+              className="text-primary-container"
+              stagger={0}
+              startDelay={1.03}
+              duration={0.9}
+            />
           </span>
         </h1>
       </section>
 
-      {/* ---------- BODY ---------- */}
+      {/* ---------- INTRO ---------- */}
       <section className="grid grid-cols-12 gap-y-10">
         <div className="col-span-12">
-          <div className="max-w-4xl space-y-6 text-body-lg text-on-surface/90">
+          <div className="max-w-4xl space-y-6 text-body-lg leading-relaxed text-on-surface/90">
             <p>
-              I&apos;m a full-stack engineer at Herzog Railroad Services in
-              Saint Joseph, Missouri. I build software that runs railroad
-              operations: CMMS platforms for fleets and facilities, the tools
-              crews use in the field, and the integrations that hold those
-              systems together.
+              I was born in Hamburg, Germany. Spent a stretch in Toulouse,
+              France. Now I live in Saint Joseph, Missouri, with a small
+              family, a dog, and a cat.
             </p>
             <p>
-              I studied engines before I studied software. Associate&apos;s in
-              Diesel Engine Technology from Bishop State Community College,
-              then a CS degree from Missouri Western State in December 2024.
-              The two degrees sit closer together than they look. Industrial
-              software is mostly edge cases, and edge cases make more sense
-              when you&apos;ve pulled the hardware apart.
-            </p>
-            <p>
-              I grew up speaking German, learned English well enough to work
-              in it, and picked up some French along the way. If you want to
-              talk in any of those, I&apos;m around.
+              A quiet life, and I like it that way. I notice the day-to-day
+              more than the big stuff. It&apos;s where most of the actual
+              life happens.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Currently — label + asymmetric list, no bullets, no borders */}
+      {/* ---------- BACKGROUND ---------- */}
       <section className="grid grid-cols-12 gap-y-8">
         <div className="col-span-12 md:col-span-3">
-          <p className="label-md">Currently</p>
+          <p className="label-md">Background</p>
         </div>
         <div className="col-span-12 md:col-span-8 md:col-start-5">
-          <ul className="space-y-5 text-body-lg text-on-surface/90">
+          <div className="space-y-6 text-body-lg leading-relaxed text-on-surface/90">
+            <p>
+              I studied engines before I studied software. A diesel
+              program at Bishop State Community College in Alabama, then
+              a CS degree from Missouri Western. Different fields on
+              paper, same question underneath. How does this thing
+              actually work when you open it up?
+            </p>
+            <p>
+              Engines let me ask it with my hands. Software lets me ask
+              it faster, at larger scale, across more surfaces. The tools
+              change. The curiosity doesn&apos;t.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------- BOOKS THAT STUCK ---------- */}
+      <section className="grid grid-cols-12 gap-y-8">
+        <div className="col-span-12 md:col-span-3">
+          <p className="label-md">Books that stuck</p>
+        </div>
+        <div className="col-span-12 md:col-span-8 md:col-start-5">
+          <ul className="space-y-5 text-body-lg leading-relaxed text-on-surface/90">
             <li>
-              Building enterprise CMMS and railroad operations software at
-              Herzog.
+              <span className="font-serif italic text-on-surface">
+                The Pragmatic Programmer
+              </span>
+              , Hunt and Thomas. The first software book that felt like
+              a set of habits, not a set of rules.
             </li>
             <li>
-              Shipping side projects under T5 on nights and weekends.
+              <span className="font-serif italic text-on-surface">
+                Clean Code
+              </span>
+              , Robert Martin. I don&apos;t agree with all of it anymore.
+              The posture still holds. Care about what you leave behind.
             </li>
             <li>
-              Sharpening my eye for system architecture and database design.
+              <span className="font-serif italic text-on-surface">
+                Can&apos;t Hurt Me
+              </span>
+              , David Goggins. For the days when the work is just what
+              it is.
             </li>
-            <li>Trying to write more. Hence this site.</li>
           </ul>
         </div>
       </section>
 
-      {/* Elsewhere */}
-      <section className="grid grid-cols-12 gap-y-8">
-        <div className="col-span-12 md:col-span-3">
-          <p className="label-md">Elsewhere</p>
-        </div>
-        <div className="col-span-12 md:col-span-8 md:col-start-5">
-          <ul className="space-y-4 text-body-lg">
-            <li>
-              <a
-                href={site.socials.github}
-                target="_blank"
-                rel="noreferrer"
-                className="text-on-surface transition-colors hover:text-primary"
-              >
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a
-                href={site.socials.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className="text-on-surface transition-colors hover:text-primary"
-              >
-                LinkedIn
-              </a>
-            </li>
-            <li>
-              <a
-                href={`mailto:${site.email}`}
-                className="text-on-surface transition-colors hover:text-primary"
-              >
-                {site.email}
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
     </div>
   );
 }

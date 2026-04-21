@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ProjectCard from "@/components/ProjectCard";
+import BlurText from "@/components/BlurText";
 import {
   getWorkProjects,
   getPersonalProjects,
@@ -19,8 +20,15 @@ export default function ProjectsPage() {
       {/* ---------- MASTHEAD ---------- */}
       <section className="pt-10 sm:pt-16">
         <h1 className="font-serif italic tracking-tighter text-on-surface text-display-lg sm:text-display-xl md:text-display-2xl">
-          Projects
-          <span className="text-primary-container">.</span>
+          <BlurText text="Projects" as="span" stagger={70} duration={0.9} />
+          <BlurText
+            text="."
+            as="span"
+            className="text-primary-container"
+            stagger={0}
+            startDelay={0.56}
+            duration={0.9}
+          />
         </h1>
       </section>
 

@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Database, Monitor } from "lucide-react";
 import ProjectCard from "@/components/ProjectCard";
+import StarBorder from "@/components/StarBorder";
+import BlurText from "@/components/BlurText";
 import { getFeaturedProjects } from "@/lib/projects";
 import { site } from "@/lib/site";
 import { images } from "@/lib/images";
@@ -12,21 +14,22 @@ export default function HomePage() {
     <div className="space-y-section">
       {/* ---------- HERO ---------- */}
       <section className="pt-10 sm:pt-16">
-        <p className="label-md mb-8">
-          {site.role} · {site.location}
-        </p>
-
         {/* Name on left, Einstein quote on right — paired editorial masthead. */}
         <div className="grid grid-cols-12 items-end gap-x-8 gap-y-10">
           <h1 className="col-span-12 font-serif italic tracking-tighter text-on-surface text-display-lg sm:text-display-xl md:col-span-8 md:text-display-2xl">
-            Lukas
+            <BlurText text="Lukas" as="span" stagger={70} duration={0.9} />
             <br />
             <span className="ml-10 text-primary-container sm:ml-20 md:ml-32">
-              Siemers.
+              <BlurText
+                text="Siemers."
+                as="span"
+                stagger={70}
+                startDelay={0.35}
+                duration={0.9}
+              />
             </span>
           </h1>
         </div>
-
         {/* Headshot + bio/CTA row, sits beneath the hero headline. */}
         <div className="mt-16 flex flex-col items-start gap-10 md:flex-row md:items-end md:gap-14">
           <img
@@ -39,13 +42,15 @@ export default function HomePage() {
               {site.shortBio}
             </p>
             <p className="mt-8">
-              <a
-                href={`mailto:${site.email}`}
-                className="inline-flex items-center gap-2 rounded-xl bg-surface-container-low px-7 py-3.5 text-base font-medium text-primary transition-all hover:bg-surface-container hover:-translate-y-0.5"
-              >
-                Get in touch
-                <span aria-hidden>→</span>
-              </a>
+              <StarBorder className="rounded-xl" color="white" speed="6s">
+                <a
+                  href={`mailto:${site.email}`}
+                  className="inline-flex items-center gap-2 rounded-xl bg-surface-container-low px-7 py-3.5 text-base font-medium text-primary-container transition-colors hover:bg-surface-container"
+                >
+                  Get in touch
+                  <span aria-hidden>→</span>
+                </a>
+              </StarBorder>
             </p>
           </div>
         </div>

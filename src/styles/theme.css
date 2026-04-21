@@ -100,3 +100,30 @@ body {
   );
   pointer-events: none;
 }
+
+/* Star border — animated shooting-star gradients for a button rim.
+   Adapted from reactbits.dev/animations/star-border. Two gradients travel
+   along the top and bottom edges; the inner content (with its own bg)
+   masks everything but a thin strip at the border, so the stars read as
+   a moving rim. Consumed by <StarBorder /> via inline animation styles. */
+@keyframes star-movement-bottom {
+  0% {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-100%, 0%);
+    opacity: 0;
+  }
+}
+
+@keyframes star-movement-top {
+  0% {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(100%, 0%);
+    opacity: 0;
+  }
+}
