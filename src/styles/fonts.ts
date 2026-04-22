@@ -18,6 +18,7 @@ export const newsreader = Newsreader({
   subsets: ["latin"],
   variable: "--font-newsreader",
   weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 

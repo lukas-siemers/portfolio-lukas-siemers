@@ -17,11 +17,11 @@ const experience = [
     company: "Herzog Railroad Services",
     location: "Saint Joseph, MO",
     bullets: [
-      "Building and maintaining full-stack applications across C#, .NET, MAUI, WPF, WinForms, and TypeScript; migrating legacy systems onto the modern platform.",
-      "Redesigned emulator architecture to isolate signals per developer, removing network conflicts and unblocking concurrent testing.",
-      "Built a Power Automate bot that watches the support mailbox, pings the on-call channel in Teams, and auto-creates tickets from email content — replacing manual triage.",
-      "Trained a local LLM (Open WebUI + Ollama) that parses incoming support emails for the relevant context and drafts a runnable script for a developer to review and execute.",
-      "Wrote a Friday cron job that aggregates the week's tickets into a summary report so support hours and time-tracking are documented accurately.",
+      "Building and maintaining full-stack applications across C#, .NET, MAUI, WPF, WinForms, and TypeScript.",
+      "Redesigned a developer test environment to isolate concurrent workloads and unblock parallel testing.",
+      "Built developer-productivity automations in Power Automate to reduce repetitive manual workflows.",
+      "Stood up a fully on-prem LLM workflow with Open WebUI and Ollama as a developer-assist tool — no third-party services, no external data egress.",
+      "Wrote a weekly aggregation job that gives the team a single view of throughput and trends.",
     ],
   },
   {

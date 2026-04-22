@@ -43,9 +43,11 @@ export default function ProjectCard({ project }: { project: Project }) {
         </div>
       </div>
 
-      <p className="mt-6 max-w-2xl text-body-md leading-relaxed text-on-surface/85">
-        {project.description}
-      </p>
+      {project.description && (
+        <p className="mt-6 max-w-2xl text-body-md leading-relaxed text-on-surface/85">
+          {project.description}
+        </p>
+      )}
 
       <div className="mt-6 flex flex-wrap items-center gap-2">
         {project.stack.map((tech) => (

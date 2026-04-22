@@ -23,11 +23,10 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "cmms-transit",
-    title: "CMMS — Enterprise maintenance platform",
+    title: "CMMS — Enterprise",
     tagline:
-      "Full-stack work on the platform that runs Herzog's maintenance operations.",
-    description:
-      "Built features across an enterprise CMMS that runs invoices, assets, purchase orders, work orders, schedules, defects, and PowerBI reporting. Migrated a legacy Transit application, its features and database schemas, into the platform. Shipped a multi-level Bill of Materials module for the R&D team. When Azure suspended our outbound email mid-release, architected a rapid migration to a RabbitMQ message queue to recover thousands of unsent messages.",
+      "Full-stack feature work on a maintenance platform spanning invoicing, assets, scheduling, and reporting.",
+    description: "",
     stack: ["Angular", "TypeScript", "C#", ".NET", "SQL", "Azure", "RabbitMQ"],
     links: {},
     year: 2026,
@@ -36,11 +35,10 @@ export const projects: Project[] = [
   },
   {
     slug: "ebus-spreadlogs",
-    title: "EBUS — Spreadlogs feature",
+    title: "EBUS — Integrated Systems",
     tagline:
-      "End-to-end design and build of a feature that eliminated a tool-switching pain point.",
-    description:
-      "Designed and shipped the Spreadlogs feature end-to-end, from DB schema to architecture to frontend, so operators no longer had to switch between EBUS and a separate application to upload data. Built as a hybrid WinForms/WPF solution with MVVM to drop a modern XAML frontend into a legacy WinForms host. Tracked down a YAML configuration bug that was caching and overwriting stored settings. The kind of thing that takes hours to find and minutes to fix.",
+      "End-to-end build of a feature that collapsed two tools into one workflow.",
+    description: "",
     stack: ["C#", "WPF", "WinForms", "XAML", "C++", "SQL"],
     links: {},
     year: 2025,
@@ -48,10 +46,10 @@ export const projects: Project[] = [
   },
   {
     slug: "ebus-legacy",
-    title: "EBUS — Legacy stabilization",
-    tagline: "Maintenance and debugging on a load-bearing legacy application.",
-    description:
-      "Ongoing work on a WinForms application that's critical to railroad operations. UI fixes, backend bug hunts, and stability improvements. Less glamorous than greenfield, but it's where I learned the system inside out. That knowledge made every later project faster.",
+    title: "EBUS — Integrated Systems",
+    tagline:
+      "Ongoing maintenance, debugging, and reliability work on a critical internal application.",
+    description: "",
     stack: ["C#", "WinForms", "WPF", "C++"],
     links: {},
     year: 2025,
@@ -59,11 +57,10 @@ export const projects: Project[] = [
   },
   {
     slug: "gpstie",
-    title: "GPSTIE — Cross-platform tie-dropping app",
+    title: "GPSTIE — Integrated Systems",
     tagline:
-      "Replaced an obsolete hardware system with a tablet-and-laptop solution for railroad crews.",
-    description:
-      "Cross-platform desktop app for tie-dropping operations. Two operators can share a job over RF, see each other's drops on a live map, and stay in sync across devices. Built a statistics dashboard and an automatic GPS failover so accuracy doesn't degrade when signal drops mid-run.",
+      "Tablet-and-laptop solution for two-operator field work in low-signal environments.",
+    description: "",
     stack: [".NET MAUI", "C#", "XAML"],
     links: {},
     year: 2025,
@@ -131,9 +128,7 @@ export const projects: Project[] = [
       "Playwright",
       "Docker",
     ],
-    links: {
-      github: "https://github.com/lukas-siemers/Zentrum",
-    },
+    links: {},
     year: 2026,
     status: "2nd place",
     kind: "personal",

@@ -90,7 +90,7 @@ export default function HomePage() {
               </h3>
               <p className="mt-6 max-w-md text-body-md leading-relaxed text-on-surface-variant">
                 Schemas, migrations, integrations. The long-lived layer:
-                inventory models, sync between CMMS and field, the data that
+                domain models, the contracts between services, the data that
                 outlasts whatever UI sits on top of it.
               </p>
               <div className="mt-8 flex flex-wrap gap-2">
