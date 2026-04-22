@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { Download, Github, Linkedin } from "lucide-react";
-import StarBorder from "@/components/StarBorder";
+import { Github, Linkedin } from "lucide-react";
 import BlurText from "@/components/BlurText";
 import { site } from "@/lib/site";
 
@@ -20,7 +19,9 @@ const experience = [
     bullets: [
       "Building and maintaining full-stack applications across C#, .NET, MAUI, WPF, WinForms, and TypeScript; migrating legacy systems onto the modern platform.",
       "Redesigned emulator architecture to isolate signals per developer, removing network conflicts and unblocking concurrent testing.",
-      "Automated developer support notifications with Power Automate, replacing manual email monitoring.",
+      "Built a Power Automate bot that watches the support mailbox, pings the on-call channel in Teams, and auto-creates tickets from email content — replacing manual triage.",
+      "Trained a local LLM (Open WebUI + Ollama) that parses incoming support emails for the relevant context and drafts a runnable script for a developer to review and execute.",
+      "Wrote a Friday cron job that aggregates the week's tickets into a summary report so support hours and time-tracking are documented accurately.",
     ],
   },
   {
@@ -74,6 +75,11 @@ const skillGroups: { label: string; items: string[] }[] = [
       "LinqPad",
       "CI/CD",
       "Linux",
+      "Docker",
+      "Power Automate",
+      "n8n",
+      "Open WebUI",
+      "Ollama",
     ],
   },
   {
@@ -126,6 +132,7 @@ export default function ContactPage() {
               operations software across C#, .NET, TypeScript, Angular,
               and SQL. English and German fluent, French working.
             </p>
+            {/* CV download temporarily disabled — re-enable once resume.pdf is refreshed.
             <div className="flex justify-center pt-2">
               <StarBorder className="rounded-lg" color="white" speed="6s">
                 <a
@@ -139,6 +146,7 @@ export default function ContactPage() {
                 </a>
               </StarBorder>
             </div>
+            */}
           </div>
         </div>
       </section>

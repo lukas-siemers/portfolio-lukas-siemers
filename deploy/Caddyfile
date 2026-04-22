@@ -1,0 +1,33 @@
+# Caddyfile for lukassiemers.com
+# Cloudflare terminates TLS at the edge and tunnels plain HTTP in,
+# so Caddy only needs to listen on :80 inside the container.
+
+:80 {
+    root * /srv/html
+    encode zstd gzip
+
+    # Serve pretty URLs like /about -> /about.html -> /about/index.html
+    # Falls back to index.html for client-side route handling if needed.
+    try_files {path} {path}.html {path}/index.html
+
+    file_server
+
+    # Basic security + cache headers.
+    header {
+        # Cache static assets aggressively; HTML is kept short.
+        Cache-Control "public, max-age=3600"
+        # Never allow embedding the site in an iframe.
+        X-Frame-Options "DENY"
+        X-Content-Type-Options "nosniff"
+        Referrer-Policy "strict-origin-when-cross-origin"
+    }
+
+    # Long-cache immutable Next.js build assets.
+    @static path /_next/static/* /images/* /fonts/*
+    header @static Cache-Control "public, max-age=31536000, immutable"
+
+    log {
+        output stdout
+        format console
+    }
+}

@@ -1,0 +1,46 @@
+# Stack for lukassiemers.com on the Pi.
+#
+# - `web` (Caddy) serves static files from ./out on port 80 internally.
+# - `tunnel` (cloudflared) connects outbound to Cloudflare and routes
+#   lukassiemers.com -> http://web:80. No ports exposed to the host,
+#   no router port-forwarding needed.
+#
+# Expected layout on the Pi:
+#   ~/portfolio/
+#   ├── docker-compose.yml   (this file)
+#   ├── Caddyfile
+#   ├── .env                 (TUNNEL_TOKEN=...)
+#   └── out/                 (rsync'd from dev machine)
+
+services:
+  web:
+    image: caddy:2-alpine
+    container_name: portfolio-web
+    restart: unless-stopped
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./out:/srv/html:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - web
+
+  tunnel:
+    image: cloudflare/cloudflared:latest
+    container_name: portfolio-tunnel
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run
+    environment:
+      - TUNNEL_TOKEN=${TUNNEL_TOKEN}
+    networks:
+      - web
+    depends_on:
+      - web
+
+networks:
+  web:
+    driver: bridge
+
+volumes:
+  caddy_data:
+  caddy_config:

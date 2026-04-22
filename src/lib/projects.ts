@@ -89,6 +89,32 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    slug: "lukassiemers-com",
+    title: "lukassiemers.com — Self-hosted on a Raspberry Pi",
+    tagline:
+      "This site, designed and built from scratch and self-hosted out of my home.",
+    description:
+      "Next.js portfolio with a typographic editorial feel, blur-in animations on every masthead, and a static-export build so there's no Node runtime to run. Self-hosted on a Raspberry Pi 4 over a Cloudflare Tunnel with no port forwarding, no inbound exposure, TLS terminated at Cloudflare's edge and plain HTTP inside a Docker network. Two containers on the Pi: Caddy serves the built `out/` folder, cloudflared keeps an outbound tunnel open. Updates are one `npm run build` and an `scp -r out` away.",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Docker",
+      "Caddy",
+      "Cloudflare Tunnel",
+      "Raspberry Pi",
+    ],
+    links: {
+      live: "https://lukassiemers.com",
+      github: "https://github.com/lukas-siemers/portfolio-lukas-siemers",
+    },
+    year: 2026,
+    status: "Live",
+    kind: "personal",
+    featured: true,
+  },
+  {
     slug: "zentrum",
     title: "Zentrum — Safety incident platform",
     tagline:

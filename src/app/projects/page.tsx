@@ -86,7 +86,7 @@ export default function ProjectsPage() {
               this site itself is the most current sample of how I write
               code:{" "}
               <a
-                href="https://github.com/lukas-siemers/lukas-portfolio"
+                href="https://github.com/lukas-siemers/portfolio-lukas-siemers"
                 className="text-on-surface underline-offset-4 transition-colors hover:text-primary"
               >
                 source on GitHub

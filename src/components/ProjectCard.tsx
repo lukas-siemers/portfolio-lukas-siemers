@@ -20,7 +20,21 @@ export default function ProjectCard({ project }: { project: Project }) {
         <div className="col-span-12 sm:col-span-3 sm:text-right">
           {project.status ? (
             <>
-              <p className="label-md text-primary">{project.status}</p>
+              <p
+                className={`label-md ${
+                  project.status === "Live"
+                    ? "inline-flex items-center gap-1.5 text-red-500"
+                    : "text-primary"
+                }`}
+              >
+                {project.status === "Live" && (
+                  <span
+                    aria-hidden
+                    className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-red-500"
+                  />
+                )}
+                {project.status}
+              </p>
               <p className="label-sm mt-1">{project.year}</p>
             </>
           ) : (
