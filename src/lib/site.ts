@@ -9,7 +9,7 @@ export const site = {
   url: "https://example.com", // replace with your real domain once set
   socials: {
     github: "https://github.com/lukas-siemers",
-    linkedin: "https://www.linkedin.com/in/lukas-siemers-306678201/",
+    linkedin: "https://www.linkedin.com/in/lukassiemers/",
   },
   t5: {
     name: "T5",
