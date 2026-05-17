@@ -31,10 +31,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/images/LST.png", type: "image/png" },
+      { url: "/images/LST-icon.png", type: "image/png" },
     ],
-    shortcut: "/images/LST.png",
-    apple: "/images/LST.png",
+    shortcut: "/images/LST-icon.png",
+    apple: "/images/LST-icon.png",
   },
 };
 
