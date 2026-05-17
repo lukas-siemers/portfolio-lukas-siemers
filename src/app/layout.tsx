@@ -29,6 +29,13 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: [
+      { url: "/images/LST.png", type: "image/png" },
+    ],
+    shortcut: "/images/LST.png",
+    apple: "/images/LST.png",
+  },
 };
 
 export default function RootLayout({
