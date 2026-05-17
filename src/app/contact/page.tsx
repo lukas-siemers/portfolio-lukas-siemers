@@ -4,7 +4,7 @@ import BlurText from "@/components/BlurText";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Contact & CV",
+  title: "Contact",
   description: `Get in touch with ${site.name}`,
 };
 
