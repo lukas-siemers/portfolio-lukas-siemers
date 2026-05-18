@@ -19,11 +19,20 @@ export const metadata: Metadata = {
     url: site.url,
     siteName: site.name,
     type: "website",
+    images: [
+      {
+        url: "/images/Headshot.jpg",
+        width: 796,
+        height: 800,
+        alt: `${site.name} — ${site.role}`,
+      },
+    ],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: `${site.name} — ${site.role}`,
     description: site.shortBio,
+    images: ["/images/Headshot.jpg"],
   },
   robots: {
     index: true,
