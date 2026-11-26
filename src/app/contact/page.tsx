@@ -17,11 +17,10 @@ const experience = [
     company: "Herzog Railroad Services",
     location: "Saint Joseph, MO",
     bullets: [
-      "Building and maintaining full-stack applications across C#, .NET, MAUI, WPF, WinForms, and TypeScript.",
-      "Redesigned a developer test environment to isolate concurrent workloads and unblock parallel testing.",
-      "Built developer-productivity automations in Power Automate to reduce repetitive manual workflows.",
-      "Stood up a fully on-prem LLM workflow with Open WebUI and Ollama as a developer-assist tool — no third-party services, no external data egress.",
-      "Wrote a weekly aggregation job that gives the team a single view of throughput and trends.",
+      "Build and maintain full-stack web and field applications for transit and rail operations, from database design through release.",
+      "Project lead for a small developer team: sprint planning, release scheduling, and code reviews.",
+      "Drive the team's move to AI-driven development, including its conventions, release pipeline, and support automation.",
+      "Own releases and handle production support escalations.",
     ],
   },
   {
@@ -30,8 +29,7 @@ const experience = [
     company: "Missouri Western State University",
     location: "Saint Joseph, MO",
     bullets: [
-      "Audited A/P checks for compliance with state and university policy; prepared monthly invoices and reconciled payments.",
-      "Owned year-end operations, inventory assessment, and fixed-asset tagging alongside the CS degree.",
+      "Processed accounts payable, maintained inventory records, and helped reconcile balance sheets.",
     ],
   },
 ];
@@ -42,7 +40,7 @@ const education = [
     title: "B.S. Computer Science",
     school: "Missouri Western State University",
     location: "Saint Joseph, MO",
-    note: "GPA 3.38. Dean's List Spring 2023, Fall 2023, and Spring 2024.",
+    note: "Dean's List Spring 2023, Fall 2023, and Spring 2024.",
   },
   {
     dates: "Dec 2020",
@@ -56,31 +54,23 @@ const education = [
 const skillGroups: { label: string; items: string[] }[] = [
   {
     label: "Languages",
-    items: ["C#", "TypeScript", "SQL", "Java", "Python", "C++", "HTML", "VB.NET"],
+    items: ["C#", "TypeScript", "SQL", "Java", "HTML/CSS"],
   },
   {
     label: "Frameworks",
-    items: [".NET", "MAUI", "WPF", "WinForms", "Angular", "Java Spring"],
+    items: [".NET 8+", "ASP.NET Core MVC / Web API", "Angular", "React Native", ".NET MAUI", "WPF", "WinForms"],
   },
   {
-    label: "Tools & infra",
-    items: [
-      "Azure",
-      "RabbitMQ",
-      "Git",
-      "BitBucket",
-      "Jira",
-      "SonarQube",
-      "Code Rabbit",
-      "LinqPad",
-      "CI/CD",
-      "Linux",
-      "Docker",
-      "Power Automate",
-      "n8n",
-      "Open WebUI",
-      "Ollama",
-    ],
+    label: "Data & cloud",
+    items: ["SQL Server", "Microsoft Azure", "Azure DevOps", "GitHub Actions", "Docker", "IIS"],
+  },
+  {
+    label: "AI & automation",
+    items: ["Claude Code", "AI agents", "RAG pipelines", "Ollama", "n8n"],
+  },
+  {
+    label: "Testing & tools",
+    items: ["xUnit", "Playwright", "Jasmine/Karma", "SonarQube", "Git", "Jira", "Agile/Scrum"],
   },
   {
     label: "Spoken",
@@ -127,10 +117,11 @@ export default function ContactPage() {
         <div className="col-span-12">
           <div className="max-w-4xl space-y-6">
             <p className="text-body-lg leading-relaxed text-on-surface/90">
-              Full-stack engineer at Herzog Railroad Services in Saint
-              Joseph, Missouri. I build enterprise CMMS and railroad
-              operations software across C#, .NET, TypeScript, Angular,
-              and SQL. English and German fluent, French working.
+              Full-stack software engineer and project lead at Herzog Railroad
+              Services in Saint Joseph, Missouri. Two years of building
+              C#/.NET and Angular applications for US transit agencies,
+              plus hardware-integrated field software for rail operations.
+              English and German fluent, French intermediate.
             </p>
             {/* CV download temporarily disabled — re-enable once resume.pdf is refreshed.
             <div className="flex justify-center pt-2">

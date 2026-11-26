@@ -8,7 +8,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Projects",
-  description: "Selected engineering work and private projects.",
+  description: "Selected engineering work and independent apps.",
 };
 
 export default function ProjectsPage() {
@@ -59,11 +59,11 @@ export default function ProjectsPage() {
         )}
       </section>
 
-      {/* ---------- 02 / PRIVATE ---------- */}
+      {/* ---------- 02 / INDEPENDENT ---------- */}
       <section>
         <div className="mb-10 grid grid-cols-12 items-end gap-4">
           <div className="col-span-12 md:col-span-9">
-            <p className="label-md text-primary">02 / Private</p>
+            <p className="label-md text-primary">02 / Independent</p>
             <h2 className="mt-3 font-serif italic tracking-tight text-display-md text-on-surface sm:text-display-lg md:text-display-xl">
               On the side.
             </h2>
@@ -82,7 +82,7 @@ export default function ProjectsPage() {
         ) : (
           <div className="rounded-sharp bg-surface-container-low p-8 sm:p-10">
             <p className="max-w-xl text-body-md leading-relaxed text-on-surface-variant">
-              T5 and other private work are taking shape. In the meantime,
+              More independent work is taking shape. In the meantime,
               this site itself is the most current sample of how I write
               code:{" "}
               <a

@@ -7,7 +7,7 @@ export const images = {
     headshot: "/images/Headshot-cutout.png",
   },
   logos: {
-    t5: "/images/T5.png",
+    hivedeck: "/images/HiveDeck.png",
   },
   projects: {
     cmms: "/images/projects/cmms.webp",

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Database, Monitor } from "lucide-react";
+import { Database, MapPin, Monitor } from "lucide-react";
 import ProjectCard from "@/components/ProjectCard";
 import StarBorder from "@/components/StarBorder";
 import BlurText from "@/components/BlurText";
@@ -94,7 +94,7 @@ export default function HomePage() {
                 outlasts whatever UI sits on top of it.
               </p>
               <div className="mt-8 flex flex-wrap gap-2">
-                {["SQL", ".NET", "TypeScript", "Integrations"].map((t) => (
+                {["SQL Server", ".NET", "Azure", "Integrations"].map((t) => (
                   <span
                     key={t}
                     className="rounded-sharp bg-surface-container px-2.5 py-1 font-mono text-xs text-on-surface-variant"
@@ -118,12 +118,12 @@ export default function HomePage() {
                 Interfaces.
               </h3>
               <p className="mt-6 max-w-sm text-body-md leading-relaxed text-on-surface-variant">
-                Web, desktop, and hardware-adjacent apps. Angular in the
-                office, MAUI and WPF trackside, whichever environment the
-                work actually lives in.
+                Web, mobile, desktop, and field apps. Angular in the office,
+                MAUI and WPF trackside, React Native and SwiftUI on the
+                App Store side.
               </p>
               <div className="mt-8 flex flex-wrap gap-2">
-                {["Angular", ".NET MAUI", "WPF", "TypeScript"].map((t) => (
+                {["Angular", ".NET MAUI", "React Native", "SwiftUI"].map((t) => (
                   <span
                     key={t}
                     className="rounded-sharp bg-surface-container px-2.5 py-1 font-mono text-xs text-on-surface-variant"
@@ -135,7 +135,7 @@ export default function HomePage() {
             </div>
           </article>
 
-          {/* 03 — Tooling & AI (full width, T5 logo on right) */}
+          {/* 03 — Tooling & AI (full width, HiveDeck logo on right) */}
           <article className="group relative col-span-1 overflow-hidden rounded-sharp bg-surface-container p-10 transition-colors hover:bg-surface-container-high md:col-span-12">
             <div className="flex flex-col gap-10 md:flex-row md:items-center md:gap-16">
               <div className="flex-1">
@@ -144,28 +144,57 @@ export default function HomePage() {
                   Tooling &amp; AI.
                 </h3>
                 <p className="mt-6 max-w-xl text-body-md leading-relaxed text-on-surface-variant">
-                  On the side I build{" "}
-                  <span className="text-on-surface">T5</span>, a
-                  developer-tools organization where we create different
-                  projects. It&apos;s also the bench where I experiment with
-                  AI as a craft shift: what sharpens us, what doesn&apos;t,
-                  what deserves to be kept.
+                  I write the AI agent conventions my team codes by and build
+                  AI tools that automate customer support. On my own time I
+                  co-develop <span className="text-on-surface">HiveDeck</span>,
+                  where teams work alongside AI coding agents in one shared
+                  room.
                 </p>
                 <a
-                  href={site.t5.github}
+                  href={site.hivedeck.url}
                   target="_blank"
                   rel="noreferrer"
                   className="rule-hairline mt-8 text-xs font-medium uppercase tracking-[0.2em] text-primary transition-opacity hover:opacity-80"
                 >
-                  View on GitHub
+                  Visit hivedeck.app
                 </a>
               </div>
               <div className="flex aspect-square w-full shrink-0 items-center justify-center rounded-sharp bg-black p-4 md:w-56">
                 <img
-                  src={images.logos.t5}
-                  alt="T5 logo"
+                  src={images.logos.hivedeck}
+                  alt="HiveDeck logo"
                   className="h-full w-full object-contain"
                 />
+              </div>
+            </div>
+          </article>
+
+          {/* 04 — Forward deployed (full width) */}
+          <article className="group relative col-span-1 overflow-hidden rounded-sharp bg-surface-container-high p-10 transition-colors hover:bg-surface-container-highest md:col-span-12">
+            <MapPin
+              className="absolute -right-4 -top-4 h-40 w-40 text-primary/5"
+              aria-hidden
+            />
+            <div className="relative z-10">
+              <p className="label-md text-primary">04 / Forward deployed</p>
+              <h3 className="mt-4 font-serif italic text-on-surface text-headline-md sm:text-display-md">
+                Forward Deployed Engineer.
+              </h3>
+              <p className="mt-6 max-w-xl text-body-md leading-relaxed text-on-surface-variant">
+                Close to the people using the software. I take production
+                escalations, turn customer problems into fixes and
+                automation, and build tools for crews working out in the
+                field.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-2">
+                {["Production support", "Integrations", "Automation", "Field software"].map((t) => (
+                  <span
+                    key={t}
+                    className="rounded-sharp bg-surface-container px-2.5 py-1 font-mono text-xs text-on-surface-variant"
+                  >
+                    {t}
+                  </span>
+                ))}
               </div>
             </div>
           </article>

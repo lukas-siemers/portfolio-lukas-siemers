@@ -60,7 +60,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         ))}
       </div>
 
-      {(project.links.github || project.links.live || project.links.writeup) && (
+      {Object.values(project.links).some(Boolean) && (
         <div className="mt-6 flex flex-wrap items-center gap-5 text-sm">
           {project.links.github && (
             <a
@@ -71,6 +71,23 @@ export default function ProjectCard({ project }: { project: Project }) {
             >
               <Github className="h-3.5 w-3.5" /> Code
             </a>
+          )}
+          {[
+            { href: project.links.website, label: "Website" },
+            { href: project.links.appStore, label: "App Store" },
+          ].map(
+            ({ href, label }) =>
+              href && (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 text-on-surface-variant transition-colors hover:text-primary"
+                >
+                  <ExternalLink className="h-3.5 w-3.5" /> {label}
+                </a>
+              ),
           )}
           {project.links.live && (
             <a

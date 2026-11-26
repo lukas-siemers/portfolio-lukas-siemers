@@ -7,6 +7,8 @@ export type Project = {
   links: {
     github?: string;
     live?: string;
+    website?: string;
+    appStore?: string;
     writeup?: string;
   };
   year: number;
@@ -23,52 +25,101 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "cmms-transit",
-    title: "CMMS — Enterprise",
+    title: "CMMS — Maintenance Management",
     tagline:
-      "Full-stack feature work on a maintenance platform spanning invoicing, assets, scheduling, and reporting.",
-    description: "",
-    stack: ["Angular", "TypeScript", "C#", ".NET", "SQL", "Azure", "RabbitMQ"],
+      "Full-stack feature work on a maintenance platform used by transit agencies.",
+    description:
+      "Work across the web UI, APIs, and database, including integrations with other systems and release ownership.",
+    stack: ["C#", ".NET", "Angular", "TypeScript", "SQL Server"],
+    links: {},
+    year: 2026,
+    status: "Oct 2025 – Present",
+    kind: "work",
+    featured: true,
+  },
+  {
+    slug: "support-automation",
+    title: "Support Automation — Own initiative",
+    tagline: "AI-assisted tooling that takes the busywork out of customer support.",
+    description:
+      "Tooling that automates support intake, helps developers work through customer issues, and keeps reporting up to date, with a developer reviewing anything AI drafts.",
+    stack: ["Python", "Playwright", "Docker", "n8n", "AI"],
     links: {},
     year: 2026,
     kind: "work",
-    featured: true,
   },
   {
-    slug: "ebus-spreadlogs",
-    title: "EBUS — Integrated Systems",
+    slug: "ebus",
+    title: "EBUS — Electronic Ballast Unloading",
     tagline:
-      "End-to-end build of a feature that collapsed two tools into one workflow.",
-    description: "",
-    stack: ["C#", "WPF", "WinForms", "XAML", "C++", "SQL"],
+      "Feature and modernization work on software that runs ballast train unloading.",
+    description:
+      "Delivered new features end to end and helped modernize a long-running desktop application without a full rewrite.",
+    stack: ["C#", "WinForms", "WPF", "C++", "SQLite"],
     links: {},
     year: 2025,
     kind: "work",
   },
   {
-    slug: "ebus-legacy",
-    title: "EBUS — Integrated Systems",
+    slug: "gps-tie",
+    title: "GPS Tie — Tie-Car Unloading",
     tagline:
-      "Ongoing maintenance, debugging, and reliability work on a critical internal application.",
-    description: "",
-    stack: ["C#", "WinForms", "WPF", "C++"],
+      "Tablet app that guides rail tie-car crews with live GPS.",
+    description:
+      "Built features for GPS-guided field work, designed to keep working when conditions out on the track are less than ideal.",
+    stack: ["C#", ".NET MAUI", "SQLite", "MVVM"],
     links: {},
     year: 2025,
     kind: "work",
-  },
-  {
-    slug: "gpstie",
-    title: "GPSTIE — Integrated Systems",
-    tagline:
-      "Tablet-and-laptop solution for two-operator field work in low-signal environments.",
-    description: "",
-    stack: [".NET MAUI", "C#", "XAML"],
-    links: {},
-    year: 2025,
-    kind: "work",
-    featured: true,
   },
 
   /* -------------------- PERSONAL -------------------- */
+  {
+    slug: "hivedeck",
+    title: "HiveDeck — Your agents. Your teammates. One room.",
+    tagline:
+      "Desktop app where teams work alongside AI coding agents in shared real-time sessions. Co-developer.",
+    description:
+      "Teammates bring their own Claude Code and Codex agents into one shared room, running on their own machines and accounts. I've built authentication, real-time collaboration features, and signed releases for macOS, Windows, and Linux ahead of closed beta.",
+    stack: ["TypeScript", "Electron", "React", "Supabase"],
+    links: {
+      website: "https://hivedeck.app",
+    },
+    year: 2026,
+    status: "Early access",
+    kind: "personal",
+    featured: true,
+  },
+  {
+    slug: "loopy",
+    title: "Loopy — Ring Puzzle",
+    tagline: "A one-handed block puzzle on a round board. Fill rings, make them fall.",
+    description:
+      "A native SwiftUI game: drag curved pieces onto five rings, clear full rings and spokes, and watch the blocks above fall inward into chain reactions. Includes a hand-checked Daily Puzzle and Game Center trophies, and plays offline with no account.",
+    stack: ["Swift", "SwiftUI", "StoreKit", "Game Center", "iOS"],
+    links: {
+      website: "https://lukas-siemers.github.io/loopy/",
+    },
+    year: 2026,
+    status: "In App Store review",
+    kind: "personal",
+    featured: true,
+  },
+  {
+    slug: "ten-again",
+    title: "Ten Again — Number puzzle",
+    tagline: "Drag through neighboring tiles to make exactly ten while the board keeps rising.",
+    description:
+      "An iOS puzzle game designed, built, and published solo. One-thumb drag controls with haptics, combo scoring, and rising difficulty.",
+    stack: ["iOS", "React Native", "Expo", "TypeScript", "Reanimated"],
+    links: {
+      appStore: "https://apps.apple.com/us/app/tenagain/id6788188428",
+    },
+    year: 2026,
+    status: "Live",
+    kind: "personal",
+    featured: true,
+  },
   {
     slug: "spotsaved",
     title: "SpotSaved — Never lose your car again",
@@ -78,7 +129,7 @@ export const projects: Project[] = [
       "A native iOS app built on nights and weekends and shipped to the App Store. Fully offline by design: no accounts, no servers, no tracking. State and photos live on the device, where they belong.",
     stack: ["iOS", "React Native", "Expo", "TypeScript", "Zustand"],
     links: {
-      live: "https://apps.apple.com/us/app/spotsaved/id6759891985",
+      appStore: "https://apps.apple.com/us/app/spotsaved/id6759891985",
     },
     year: 2026,
     status: "Live",
@@ -109,7 +160,6 @@ export const projects: Project[] = [
     year: 2026,
     status: "Live",
     kind: "personal",
-    featured: true,
   },
   {
     slug: "zentrum",

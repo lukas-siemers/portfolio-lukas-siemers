@@ -1,9 +1,9 @@
 export const site = {
   name: "Lukas Siemers",
-  role: "Full Stack Software Engineer",
-  tagline: "Full-stack engineer. Railroads.",
+  role: "Full Stack & Forward Deployed Engineer",
+  tagline: "Full-stack engineer and project lead. Railroads.",
   shortBio:
-  "Full-stack software engineer at Herzog Railroad Services. I started out on ballast-train integrations and now work across the enterprise systems that keep rail operations running. On the side I build T5, a developer-tools organization where we ship our own projects. Outside work: hiking, climbing, tinkering. Most of my learning goes to AI right now. It's the biggest shift to the craft I've seen, and one I'd rather lead than chase.",
+    "Full-stack software engineer and project lead at Herzog Railroad Services. I lead development projects, build C#/.NET and Angular software for transit and rail operations, and drive our move to AI-driven development. On my own time I co-develop HiveDeck and ship iOS apps. Outside work: hiking, climbing, tinkering.",
   email: "lukas.siemers123@gmail.com",
   location: "Saint Joseph, MO",
   url: "https://lukassiemers.com",
@@ -11,9 +11,9 @@ export const site = {
     github: "https://github.com/lukas-siemers",
     linkedin: "https://www.linkedin.com/in/lukassiemers/",
   },
-  t5: {
-    name: "T5",
-    github: "https://github.com/T5-labs",
+  hivedeck: {
+    name: "HiveDeck",
+    url: "https://hivedeck.app",
   },
 };
 
