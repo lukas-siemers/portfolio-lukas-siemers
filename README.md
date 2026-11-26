@@ -61,21 +61,19 @@ lukas-portfolio/
 
 ## Deployment
 
-### Vercel (recommended)
+The site runs on **Cloudflare Pages** (project `lukas-portfolio`). GitHub Actions ([`.github/workflows/ci-cd.yml`](.github/workflows/ci-cd.yml)) handles it:
 
-1. Push this repo to GitHub.
-2. Go to [vercel.com/new](https://vercel.com/new) and import the repo.
-3. Accept the defaults — Vercel auto-detects Next.js.
-4. Add your custom domain in the Vercel project settings (Settings → Domains).
+- **Pull requests to `main`:** lint, typecheck, and build.
+- **Pushes to `main`:** the same checks, then a production deploy to lukassiemers.com.
 
-### Alternatives
+The deploy needs two repository secrets (Settings → Secrets and variables → Actions):
 
-- **Cloudflare Pages** — connect the repo, build command `npm run build`, output `/.next`.
-- **Netlify** — install the `@netlify/plugin-nextjs` plugin; otherwise similar flow.
+| Secret | Value |
+| --- | --- |
+| `CLOUDFLARE_API_TOKEN` | A Cloudflare API token with the **Account → Cloudflare Pages → Edit** permission |
+| `CLOUDFLARE_ACCOUNT_ID` | The ID of the Cloudflare account that owns the Pages project |
 
-## Custom domain
-
-Buy a domain at [Cloudflare Registrar](https://www.cloudflare.com/products/registrar/) (cheapest, at cost) or Namecheap. In your DNS, add a CNAME from `www` to `cname.vercel-dns.com` and an A record for the apex to `76.76.21.21` (Vercel's docs have the current values — verify before configuring).
+To redeploy without a new commit, run the **CI/CD** workflow on `main` from the Actions tab.
 
 ## License
 
