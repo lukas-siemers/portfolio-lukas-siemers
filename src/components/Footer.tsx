@@ -37,7 +37,10 @@ export default function Footer() {
         </div>
 
         {/* Year */}
-        <p className="label-sm">© {year}</p>
+        <p className="label-sm">
+          © {year}
+          <span className="text-on-surface-variant"> · Updated Nov 26, 2026</span>
+        </p>
       </div>
     </footer>
   );

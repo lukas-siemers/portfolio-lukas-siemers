@@ -126,7 +126,7 @@ export const projects: Project[] = [
     tagline:
       "iOS app for remembering where you parked. Meter reminder, photo of the spot, walks you back.",
     description:
-      "A native iOS app built on nights and weekends and shipped to the App Store. Fully offline by design: no accounts, no servers, no tracking. State and photos live on the device, where they belong.",
+      "A native iOS app built on nights and weekends and shipped to the App Store. Fully offline by design: no accounts, no servers, no tracking. State and photos live on the device, where they belong. Now on version 1.3, past 100 downloads on the App Store.",
     stack: ["iOS", "React Native", "Expo", "TypeScript", "Zustand"],
     links: {
       appStore: "https://apps.apple.com/us/app/spotsaved/id6759891985",
@@ -160,6 +160,31 @@ export const projects: Project[] = [
     year: 2026,
     status: "Live",
     kind: "personal",
+  },
+  {
+    slug: "crafted-by-christine",
+    title: "Crafted by Christine — E-commerce storefront",
+    tagline:
+      "A real storefront built to take money: product catalog, cart, and Stripe checkout on Next.js and Supabase.",
+    description:
+      "A full e-commerce build that goes all the way to a paid order: product catalog, cart, and Stripe checkout, with session-based auth and transactional order email on top. Postgres on Supabase with Drizzle handling the schema and migrations, Zod validating every boundary, and the whole thing deployed to Cloudflare Workers via OpenNext. In progress.",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Supabase",
+      "Postgres",
+      "Drizzle",
+      "Stripe",
+      "Tailwind CSS",
+      "Cloudflare Workers",
+    ],
+    links: {
+      live: "https://craftedbychristine.com",
+    },
+    year: 2026,
+    status: "In progress",
+    kind: "personal",
+    featured: true,
   },
   {
     slug: "zentrum",
